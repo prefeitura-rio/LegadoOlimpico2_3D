@@ -1,12 +1,10 @@
-# ITP Visual Journalism Fall 2023 - Visual Explainers
+# React Three Fiber
 
-This section will cover the basics of creating visual explainers using React Three Fiber.
+Visual explainers using React Three Fiber.
 
 ## Loading in a model
 
-We use the `useGLTF` hook from Drei from week 3 to load in a model (see `StatueGLTFObject.jsx`)
-
-> Model thanks to https://www.myminifactory.com/object/3d-print-townley-discobolus-the-discus-thrower-25156
+We use the `useGLTF` hook from Drei to load in a model (see `StatueGLTFObject.jsx`)
 
 Lights are used in `Scene.jsx` to illuminate the model.
 
