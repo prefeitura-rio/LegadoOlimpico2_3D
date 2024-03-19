@@ -6,12 +6,17 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.80.4",
     "@react-three/fiber": "^8.13.7",
+    "@theatre/core": "^0.7.0",
+    "@theatre/r3f": "^0.7.0",
+    "@theatre/studio": "^0.7.0",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,6 +27,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/three": "^0.155.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "gh-pages": "^6.1.1",
     "vite": "^4.3.8"
   },
   "engines": {

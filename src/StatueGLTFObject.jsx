@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber";
 function Marker(props) {
   const { children, position } = props;
   return (
-    <Html style={{ color: "white" }} position={position}>
+    <Html  position={position}   >
       {children}
     </Html>
   );

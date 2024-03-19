@@ -2,57 +2,54 @@ import { useEffect } from "react";
 
 import Scene from "./Scene";
 import SimpleSlide from "./SimpleSlide";
-import { CameraTimeline } from "./AnimatedCamera";
+// import { CameraTimeline } from "./AnimatedCamera";
 
 // We add a CSS file here so we can style components
 import "./App.css";
 
-/**
- * This function will calculate how much the user has scrolled (0-1)
- * @returns {number} The percentage of how much the user has scrolled (0-1)
- */
-function getScrollProgress() {
-  // This will calculate how many pixels the page is vertically
-  const winScroll = window.document.documentElement.scrollTop;
+import theatreState from "./theatreState.json";
 
-  // This is responsible for subtracticing the total height of the page - where the users page is scrolled to
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
+import { SheetProvider } from "@theatre/r3f";
 
-  // This will calculate the final total of the percentage of how much the user has scrolled (0-1)
-  return winScroll / height;
-}
+import { Canvas, useFrame } from "@react-three/fiber";
+import { ScrollControls, Scroll } from "@react-three/drei";
+import { getProject, val } from "@theatre/core";
+
 
 function App() {
-  // Set the animation to play based on scroll position
-  useEffect(() => {
-    // We then register a callback that executes every time the user scrolls
-    window.onscroll = (e) => {
-      const scrolled = getScrollProgress();
 
-      // console.log(`Scroll progress: ${progress}`);
-      CameraTimeline.progress(scrolled);
-
-      return () => {
-        // We unregister the callback when the component unmounts
-        window.onscroll = null;
-      };
-    };
-  }, []);
+  const sheet = getProject("Fly Through", { state: theatreState }).sheet(
+    "Scene"
+  );
 
   return (
-    <div id="article_wrapper">
-      {/* HTML slides are nested here and we use vh values to specify where they are */}
-      <SimpleSlide viewportPosition={50}>Oi from slide 1</SimpleSlide>
-      <SimpleSlide viewportPosition={100}>Oi from slide 2</SimpleSlide>
-      <SimpleSlide viewportPosition={200}>Oi from slide 3</SimpleSlide>
-      <SimpleSlide viewportPosition={300}>Oi from slide 4</SimpleSlide>
-      <SimpleSlide viewportPosition={550}>Oi from slide 5</SimpleSlide>
+    <>
 
       {/* 3D scene container */}
-      <Scene />
-    </div>
+      <Canvas gl={{ preserveDrawingBuffer: true }}>
+        <ScrollControls pages={12} damping={0.5}>
+          <SheetProvider sheet={sheet}>
+            <Scene />
+          </SheetProvider>
+          <Scroll html>
+            <div id="article_wrapper">
+              {/* HTML slides are nested here and we use vh values to specify where they are */}
+              <SimpleSlide viewportPosition={50}>Oi from slide 1</SimpleSlide>
+              <SimpleSlide viewportPosition={150}>Oi from slide 2</SimpleSlide>
+              <SimpleSlide viewportPosition={280}>Oi from slide 3</SimpleSlide>
+              <SimpleSlide viewportPosition={420}>Oi from slide 4</SimpleSlide>
+              <SimpleSlide viewportPosition={550}>Oi from slide 5</SimpleSlide>
+              <SimpleSlide viewportPosition={700}>Oi from slide 6</SimpleSlide>
+              <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
+              <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
+            </div>
+          </Scroll>
+        </ScrollControls>
+      </Canvas>
+      {/* </div> */}
+
+
+    </>
   );
 }
 
