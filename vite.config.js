@@ -6,6 +6,8 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  base: "/LegadoOlimpico2_3D",
+  base: process.env.NODE_ENV === 'production'
+  ? '/LegadoOlimpico2_3D/'
+  : '/',
   plugins: [react()],
 });
