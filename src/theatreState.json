@@ -47,7 +47,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 1.9052557624888373
+                    "value": 1.9831941935375281
                   },
                   {
                     "id": "gV22zuLUp8",
@@ -60,7 +60,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.3237022716102198
+                    "value": 0.32495303802044107
                   },
                   {
                     "id": "5zpJgm-UZf",
@@ -73,7 +73,20 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.2761901262504306
+                    "value": 0.2187448016252658
+                  },
+                  {
+                    "id": "kmAk4qoRvZ",
+                    "position": 1.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3396362785479441
                   },
                   {
                     "id": "mCrBksRMbk",
@@ -104,6 +117,19 @@
                   {
                     "id": "uDb_mDtN9H",
                     "position": 3.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.1472664053328182
+                  },
+                  {
+                    "id": "EUldGONSS6",
+                    "position": 3.867,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -144,7 +170,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.7929074021593977
+                    "value": 1.144894415269756
                   },
                   {
                     "id": "fop61bF7z0",
@@ -157,7 +183,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.5265639494310113
+                    "value": 0.5270299878412432
                   },
                   {
                     "id": "OJWW4g6iW_",
@@ -170,7 +196,20 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.5511450799420508
+                    "value": 0.4906321373483962
+                  },
+                  {
+                    "id": "NivD0EuYff",
+                    "position": 1.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.565663578799783
                   },
                   {
                     "id": "l6EtVn9-pZ",
@@ -210,6 +249,19 @@
                     ],
                     "type": "bezier",
                     "value": -0.4422228891058102
+                  },
+                  {
+                    "id": "bD7ZMEsV4H",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.4422228891058103
                   }
                 ]
               },
@@ -241,7 +293,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -1.665596462674833
+                    "value": -1.8854136538701036
                   },
                   {
                     "id": "2LmbIMyQas",
@@ -254,7 +306,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.8594239970463293
+                    "value": -0.6018696505680565
                   },
                   {
                     "id": "9BWX36Dgvt",
@@ -267,7 +319,20 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.7668910820783776
+                    "value": -0.5330273470118282
+                  },
+                  {
+                    "id": "KKy6cwCNkL",
+                    "position": 1.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.709348205371391
                   },
                   {
                     "id": "5ELUYJiu_i",
@@ -307,6 +372,19 @@
                     ],
                     "type": "bezier",
                     "value": -0.8243071976141659
+                  },
+                  {
+                    "id": "jKN4Mt4ocN",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.8145801941302265
                   }
                 ]
               },
@@ -338,7 +416,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -5.024872160598391
+                    "value": -4.8633626957580365
                   },
                   {
                     "id": "ddpRHio0ny",
@@ -351,7 +429,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -3.6992055032832245
+                    "value": -3.8625468169297204
                   },
                   {
                     "id": "Uzvo3ZwZgW",
@@ -364,23 +442,10 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -4.209486482345649
+                    "value": -4.00123512970934
                   },
                   {
                     "id": "7RUlBzcpxi",
-                    "position": 1.8,
-                    "connectedRight": true,
-                    "handles": [
-                      0.5,
-                      1,
-                      0.5,
-                      0
-                    ],
-                    "type": "bezier",
-                    "value": -5.060221324032433
-                  },
-                  {
-                    "id": "CMx4Q8c0Q3",
                     "position": 1.833,
                     "connectedRight": true,
                     "handles": [
@@ -390,11 +455,11 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -4.522983209629832
+                    "value": -4.886528362527465
                   },
                   {
                     "id": "C8wL6lH3ya",
-                    "position": 2.3,
+                    "position": 2.133,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -455,7 +520,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -1.6554562461807318
+                    "value": -1.5466228003749212
                   }
                 ]
               },
@@ -487,7 +552,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 1.0484729276628502
+                    "value": 0.3767731662191397
                   },
                   {
                     "id": "Em222b5wjv",
@@ -500,7 +565,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.9999133157388166
+                    "value": 0.4401509163834244
                   },
                   {
                     "id": "d7YnkLEdNV",
@@ -513,23 +578,10 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.9965484431290668
+                    "value": 0.7400308220721565
                   },
                   {
                     "id": "EbCyo8gN36",
-                    "position": 1.8,
-                    "connectedRight": true,
-                    "handles": [
-                      0.5,
-                      1,
-                      0.5,
-                      0
-                    ],
-                    "type": "bezier",
-                    "value": 0.4909587723081922
-                  },
-                  {
-                    "id": "3ataPXhDcy",
                     "position": 1.833,
                     "connectedRight": true,
                     "handles": [
@@ -539,11 +591,11 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.26423147760259214
+                    "value": 0.7170137667342181
                   },
                   {
                     "id": "c7q39bfYvg",
-                    "position": 2.3,
+                    "position": 2.133,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -604,7 +656,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 2.9217219623411435
+                    "value": 2.1911315514000336
                   }
                 ]
               },
@@ -636,7 +688,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 6.221633822678937
+                    "value": 6.27209300985212
                   },
                   {
                     "id": "Up57mk5RHj",
@@ -649,7 +701,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 5.209946194967399
+                    "value": 5.2919629618989905
                   },
                   {
                     "id": "QqKs-kEgsm",
@@ -662,23 +714,10 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 4.864398293009166
+                    "value": 5.1515854491681345
                   },
                   {
                     "id": "JLr-YmM8LY",
-                    "position": 1.8,
-                    "connectedRight": true,
-                    "handles": [
-                      0.5,
-                      1,
-                      0.5,
-                      0
-                    ],
-                    "type": "bezier",
-                    "value": 3.7862719258806745
-                  },
-                  {
-                    "id": "M8iBzrD05I",
                     "position": 1.833,
                     "connectedRight": true,
                     "handles": [
@@ -688,11 +727,11 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 3.9221801664795963
+                    "value": 3.7343874515693534
                   },
                   {
                     "id": "Mm3c4_FT7w",
-                    "position": 2.3,
+                    "position": 2.133,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -753,7 +792,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -2.0873082082566206
+                    "value": -1.7659853630605222
                   }
                 ]
               },
@@ -764,6 +803,19 @@
                   {
                     "id": "9jCB-xavJV",
                     "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "v81WwfaxwK",
+                    "position": 0.833,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -807,6 +859,19 @@
                     "value": 1
                   },
                   {
+                    "id": "ajsfKrS9qr",
+                    "position": 0.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
                     "id": "Euy6HkenST",
                     "position": 1.3,
                     "connectedRight": true,
@@ -817,7 +882,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 1
+                    "value": 1.04
                   }
                 ]
               },
@@ -839,6 +904,19 @@
                     "value": 1
                   },
                   {
+                    "id": "3tmNWQqBVY",
+                    "position": 0.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.8267379728648938
+                  },
+                  {
                     "id": "ERKdOsz_Jh",
                     "position": 1.3,
                     "connectedRight": true,
@@ -849,7 +927,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 1
+                    "value": 1.1800000000000002
                   }
                 ]
               },
@@ -946,6 +1024,19 @@
                     ],
                     "type": "bezier",
                     "value": 40
+                  },
+                  {
+                    "id": "dogx-p1ISV",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 50
                   }
                 ]
               },
@@ -1004,6 +1095,19 @@
                     ],
                     "type": "bezier",
                     "value": 1.0001188749493095
+                  },
+                  {
+                    "id": "iMFRF8O7gx",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
                   }
                 ]
               }
@@ -1030,6 +1134,8 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "JkOCqM0cE81gSJg6",
+    "sYWvE-2ybgbhCxzV",
     "Y3k9r13Zv7sOEFU4",
     "-OwWqn8pB96hnqzD",
     "_2UTgsTMYTDwwSje"

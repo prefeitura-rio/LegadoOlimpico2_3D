@@ -43,19 +43,36 @@ function Scene() {
 
       {/* Objects 📦 */}
       <Suspense fallback={null}>
-        <StatueGLTFObject modelUrl={"/cidade_atualizado.glb"} />
+        <StatueGLTFObject modelUrl={"base_final.glb"} />
       </Suspense>
 
       <Suspense fallback={null}>
-        <StatueGLTFObject modelUrl={"/teste_obj.glb"} />
+        <StatueGLTFObject modelUrl={"BRT.glb"} />
       </Suspense>
 
-      <mesh position={[5.3, 0.02, -4.65]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} onClick={(e) => { window.alert("cliquei") }}     
-         onPointerOver={(e) => { document.body.style.cursor = 'pointer'; }}
-         onPointerOut={(e) => { document.body.style.cursor = 'default'; }}>
-        <circleGeometry args={[0.03]} />
-        <meshBasicMaterial color="red" />
-      </mesh>
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"escolas.glb"} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"linhas_textos.glb"} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"obj1.glb"} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"obj2.glb"} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"obj3.glb"} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"VLT.glb"} />
+      </Suspense>
 
       <PerspectiveCamera
         theatreKey="Camera"

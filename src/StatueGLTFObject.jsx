@@ -1,15 +1,32 @@
+import React, { useState } from "react";
 import { useRef } from "react";
-import { useGLTF, Html } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useGLTF, Html, useScroll } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import "./App.css";
 
-function Marker(props) {
-  const { children, position } = props;
+function ButtonMarker({ children, position, visibleRange }) {
+  const { gl } = useThree();
+  const data = useScroll();
+  const [opacity, setOpacity] = useState(0);
+
+  useFrame(() => {
+    const isVisible = data.scroll.current > visibleRange[0] && data.scroll.current < visibleRange[1];
+    setOpacity(isVisible ? 1 : 0);
+
+    // console.log("data.scroll.current  ", data.scroll.current )
+  });
+
   return (
-    <Html  position={position}   >
-      {children}
+    <Html portal={{ current: gl.domElement.parentNode }} position={position}>
+      <div className="fade button-container" style={{ opacity: opacity }}>
+        <button id="round-button"><span className="arrow">&#8598;</span></button>
+        <span className="button-text">{children}</span>
+      </div>
+
     </Html>
   );
 }
+
 
 function StatueGLTFObject(props) {
   const modelRef = useRef();
@@ -25,11 +42,12 @@ function StatueGLTFObject(props) {
       object={gltf.scene}
     >
       {/* Each of these markers maps an HTML element onto a point in 3D space */}
-      <Marker position={[0, 0, -2]}><button>botão1</button></Marker>
-      <Marker position={[0, 0, -5]}><button>botão2</button></Marker>
-      <Marker position={[2, 0, -7]}><button>botão3</button></Marker>
-      <Marker position={[-2, 0, -3]}><button>botão4</button></Marker>
-      <Marker position={[3, 0, -4]}><button>botão5</button></Marker>
+      <ButtonMarker position={[5.35, 0.02, -4.8]} visibleRange={[0.09, 0.14]}>Texto explicativo 1</ButtonMarker>
+      <ButtonMarker position={[4.3, 0.02, -4.6]} visibleRange={[0.16, 0.25]}>Texto explicativo 2</ButtonMarker>
+      <ButtonMarker position={[4.4, 0.02, -5.2]} visibleRange={[0.27, 0.48]}>Texto explicativo 3</ButtonMarker>
+      <ButtonMarker position={[1.5, 0.02, -3.5]} visibleRange={[0.52, 0.67]}>Texto explicativo 4</ButtonMarker>
+      <ButtonMarker position={[-2.0, 0.02, -4.5]} visibleRange={[0.79, 0.88]}>Texto explicativo 5</ButtonMarker>
+
     </primitive>
   );
 }

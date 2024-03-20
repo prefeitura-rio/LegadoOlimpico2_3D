@@ -10,8 +10,53 @@ body {
 
 }
 
+/* CSS for fade-in/fade-out effect */
+.fade {
+  transition: opacity 0.7s ease-in-out;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+#round-button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+
+}
+
+#round-button .arrow {
+  display: inline-block;
+}
+
+.button-text {
+  margin-left: 10px;
+  font-size: 20px;
+  color: black
+}
+
+#round-button:hover {
+  background-color: black;
+  color: black;
+}
+
+#round-button:hover .arrow {
+  color: white;
+}
+
 #canvas_wrapper {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
+  /* Safari */
   position: sticky;
   top: 0;
   width: 100vw;
@@ -33,5 +78,4 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: red;
- }
- 
+}
