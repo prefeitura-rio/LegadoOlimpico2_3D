@@ -45,7 +45,7 @@ function StatueGLTFObject(props) {
       <ButtonMarker position={[4.3, 0.02, -4.6]} visibleRange={[0.16, 0.25]} message="hakuna matata 2">Texto explicativo 2</ButtonMarker>
       <ButtonMarker position={[4.4, 0.02, -5.2]} visibleRange={[0.27, 0.35]} message="hakuna matata 3">Texto explicativo 3</ButtonMarker>
       <ButtonMarker position={[3, 0.02, -5.7]} visibleRange={[0.36, 0.48]} message="hakuna matata 4">Texto explicativo 4</ButtonMarker>
-      <ButtonMarker position={[1.5, 0.02, -3.5]} visibleRange={[0.52, 0.67]} message="hakuna matata 5">Texto explicativo 5</ButtonMarker>
+      <ButtonMarker position={[1.8, 0.02, -3.4]} visibleRange={[0.52, 0.67]} message="hakuna matata 5">Texto explicativo 5</ButtonMarker>
       <ButtonMarker position={[-2.0, 0.02, -4.5]} visibleRange={[0.79, 0.88]} message="hakuna matata 6">Texto explicativo 6</ButtonMarker>
 
     </primitive>

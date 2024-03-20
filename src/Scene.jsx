@@ -74,6 +74,10 @@ function Scene() {
         <StatueGLTFObject modelUrl={"VLT.glb"} />
       </Suspense>
 
+      <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"parque_olimpico.glb"} />
+      </Suspense>
+
       <PerspectiveCamera
         theatreKey="Camera"
         makeDefault
