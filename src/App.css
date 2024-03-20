@@ -79,3 +79,9 @@ body {
   transform: translate(-50%, -50%);
   background-color: red;
 }
+.loading{
+  font-size: 30px;
+  display:flex;
+  justify-content: center;
+  white-space: nowrap;
+}

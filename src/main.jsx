@@ -6,5 +6,5 @@ import App from "./App.jsx";
 import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
-studio.extend(extension);
-studio.initialize();
+// studio.extend(extension);
+// studio.initialize();

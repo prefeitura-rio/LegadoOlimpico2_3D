@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 import Scene from "./Scene";
 import SimpleSlide from "./SimpleSlide";
@@ -15,6 +15,18 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { ScrollControls, Scroll } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 
+import { Html, useProgress } from '@react-three/drei';
+
+function Loader() {
+  const { progress } = useProgress();
+  console.log(progress);
+  return <Html center>
+    <div className="loading">
+       {Math.ceil(progress)} % carregado
+    </div>
+  </Html>;
+}
+
 
 function App() {
 
@@ -29,7 +41,9 @@ function App() {
       <Canvas gl={{ preserveDrawingBuffer: true }}>
         <ScrollControls pages={12} damping={0.5}>
           <SheetProvider sheet={sheet}>
-            <Scene />
+            <Suspense fallback={<Loader />}>
+              <Scene />
+            </Suspense>
           </SheetProvider>
           <Scroll html>
             <div id="article_wrapper">
