@@ -41,14 +41,14 @@ function Scene() {
         studio: 'studio_small_03_1k.hdr',
         sunset: 'venice_sunset_1k.hdr',
         warehouse: 'empty_warehouse_01_1k.hdr', */}
-      <Environment preset="forest" />
+      <Environment preset="night" />
 
       {/* Lights 💡 */}
       <color attach="background" args={[bgColor]} />
 
       {/* <fog attach="fog" color={bgColor} near={-4} far={10} /> */}
       <ambientLight intensity={0.5} />
-      <directionalLight position={[-5, 5, -5]} intensity={1.5} />
+      <directionalLight position={[0, 3, -2]} intensity={2.5} />
 
 
       {/* Objects 📦 */}
