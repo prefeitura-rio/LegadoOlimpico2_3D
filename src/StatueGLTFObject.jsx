@@ -1,26 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { useGLTF, Html, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import "./App.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 4,
+};
+
+const BasicModal = ({ isOpen, onClose, message }) => {
+  return (
+    <div>
+      <Modal
+        open={isOpen}
+        onClose={onClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h5" component="h2">
+            {message}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+           {message}
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
 
 function ButtonMarker({ children, position, visibleRange,message }) {
   const { gl } = useThree();
   const data = useScroll();
   const [opacity, setOpacity] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
   useFrame(() => {
     const isVisible = data.scroll.current > visibleRange[0] && data.scroll.current < visibleRange[1];
-    setOpacity(isVisible ? 1 : 0);
-
-    // console.log("data.scroll.current  ", data.scroll.current )
+    setOpacity(isOpen ? 0 : (isVisible ? 1 : 0));
   });
 
   return (
     <Html portal={{ current: gl.domElement.parentNode }} position={position}>
-    <div className="fade button-container" style={{ opacity: opacity }}>
-      <button id="round-button" onClick={() => window.alert(message)}><span className="arrow">&#8598;</span></button>
+    <div className="fade button-container" style={{ opacity: opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}>
+      <button id="round-button" onClick={toggleModal}><span className="arrow">&#8598;</span></button>
       <span className="button-text">{children}</span>
+      <BasicModal isOpen={isOpen} onClose={toggleModal} message={message} />
     </div>
   </Html>
   );

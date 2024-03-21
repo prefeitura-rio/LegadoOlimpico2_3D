@@ -45,10 +45,10 @@ function App() {
               <Scene />
             </Suspense>
           </SheetProvider>
-          <Scroll html>
-            <div id="article_wrapper">
+          {/* <Scroll html>
+            <div id="article_wrapper"> */}
               {/* HTML slides are nested here and we use vh values to specify where they are */}
-              <SimpleSlide viewportPosition={50}>Oi from slide 1</SimpleSlide>
+              {/* <SimpleSlide viewportPosition={50}>Oi from slide 1</SimpleSlide>
               <SimpleSlide viewportPosition={150}>Oi from slide 2</SimpleSlide>
               <SimpleSlide viewportPosition={280}>Oi from slide 3</SimpleSlide>
               <SimpleSlide viewportPosition={420}>Oi from slide 4</SimpleSlide>
@@ -57,7 +57,7 @@ function App() {
               <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
               <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
             </div>
-          </Scroll>
+          </Scroll> */}
         </ScrollControls>
       </Canvas>
       {/* </div> */}

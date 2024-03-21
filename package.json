@@ -13,14 +13,20 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.14",
     "@react-three/drei": "^9.80.4",
     "@react-three/fiber": "^8.13.7",
     "@theatre/core": "^0.7.0",
     "@theatre/r3f": "^0.7.0",
     "@theatre/studio": "^0.7.0",
+    "framer-motion": "^11.0.18",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-modal-sheet": "^2.2.0",
     "three": "^0.155.0"
   },
   "devDependencies": {
