@@ -7,11 +7,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import "./App.css";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-const style = {
-  position: 'absolute',
+const styleLeft = {
+  position: 'relative',
   top: '50%',
-  left: '50%',
+  left: '220px',
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
@@ -20,8 +21,33 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+const styleRight = {
+  position: 'fixed',
+  top: '50%',
+  right: '-10px',
+  transform: 'translate(0, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 4,
+};
+const styleBottom = {
+  position: 'fixed',
+  top: '80%',
+  transform: 'translate(0, -50%)',
+  width: 325,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 4,
+ };
 
-const BasicModal = ({ isOpen, onClose, message }) => {
+const BasicModal = ({ isOpen, onClose, message, id }) => {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <div>
       <Modal
@@ -30,7 +56,7 @@ const BasicModal = ({ isOpen, onClose, message }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={isMobile ? styleBottom : (id == 1 || id == 3 || id == 5) ? styleLeft : styleRight}>
           <Typography id="modal-modal-title" variant="h5" component="h2">
             {message}
           </Typography>
@@ -43,7 +69,7 @@ const BasicModal = ({ isOpen, onClose, message }) => {
   );
 }
 
-function ButtonMarker({ children, position, visibleRange,message }) {
+function ButtonMarker({ children, position, visibleRange,message, id }) {
   const { gl } = useThree();
   const data = useScroll();
   const [opacity, setOpacity] = useState(0);
@@ -59,10 +85,10 @@ function ButtonMarker({ children, position, visibleRange,message }) {
 
   return (
     <Html portal={{ current: gl.domElement.parentNode }} position={position}>
-    <div className="fade button-container" style={{ opacity: opacity, pointerEvents: opacity === 0 ? 'none' : 'auto' }}>
+    <BasicModal isOpen={isOpen} onClose={toggleModal} message={message} id ={id} />
+    <div className="fade button-container" style={{ position:"relative", display: opacity?"block":"none" }}>
       <button id="round-button" onClick={toggleModal}><span className="arrow">&#8598;</span></button>
       <span className="button-text">{children}</span>
-      <BasicModal isOpen={isOpen} onClose={toggleModal} message={message} />
     </div>
   </Html>
   );
@@ -83,12 +109,12 @@ function StatueGLTFObject(props) {
       object={gltf.scene}
     >
       {/* Each of these markers maps an HTML element onto a point in 3D space */}
-      <ButtonMarker position={[5.35, 0.02, -4.8]} visibleRange={[0.09, 0.14]} message="hakuna matata 1">Texto explicativo 1</ButtonMarker>
-      <ButtonMarker position={[4.3, 0.02, -4.6]} visibleRange={[0.16, 0.25]} message="hakuna matata 2">Texto explicativo 2</ButtonMarker>
-      <ButtonMarker position={[4.4, 0.02, -5.2]} visibleRange={[0.27, 0.35]} message="hakuna matata 3">Texto explicativo 3</ButtonMarker>
-      <ButtonMarker position={[3, 0.02, -5.7]} visibleRange={[0.36, 0.48]} message="hakuna matata 4">Texto explicativo 4</ButtonMarker>
-      <ButtonMarker position={[1.8, 0.02, -3.4]} visibleRange={[0.52, 0.67]} message="hakuna matata 5">Texto explicativo 5</ButtonMarker>
-      <ButtonMarker position={[-2.0, 0.02, -4.5]} visibleRange={[0.79, 0.88]} message="hakuna matata 6">Texto explicativo 6</ButtonMarker>
+      <ButtonMarker position={[5.35, 0.02, -4.8]}id={1}  visibleRange={[0.09, 0.14]} message="hakuna matata 1">Texto explicativo 1</ButtonMarker>
+      <ButtonMarker position={[4.3, 0.02, -4.6]} id={2} visibleRange={[0.16, 0.25]} message="hakuna matata 2">Texto explicativo 2</ButtonMarker>
+      <ButtonMarker position={[4.4, 0.02, -5.2]}id={3} visibleRange={[0.27, 0.35]} message="hakuna matata 3">Texto explicativo 3</ButtonMarker>
+      <ButtonMarker position={[3, 0.02, -5.7]}id={4} visibleRange={[0.36, 0.48]} message="hakuna matata 4">Texto explicativo 4</ButtonMarker>
+      <ButtonMarker position={[1.8, 0.02, -3.4]}id={5} visibleRange={[0.52, 0.67]} message="hakuna matata 5">Texto explicativo 5</ButtonMarker>
+      <ButtonMarker position={[-2.0, 0.02, -4.5]}id={6} visibleRange={[0.79, 0.88]} message="hakuna matata 6">Texto explicativo 6</ButtonMarker>
 
     </primitive>
   );

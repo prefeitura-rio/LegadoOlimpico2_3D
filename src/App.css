@@ -18,11 +18,11 @@ body {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  z-index:9
+  z-index:0
 }
 
 #round-button {
-  z-index: 1;
+  z-index:0;
   background-color: transparent;
   border: 1px solid black;
   color: black;
@@ -41,6 +41,7 @@ body {
 }
 
 .button-text {
+  z-index:0;
   margin-left: 10px;
   font-size: 20px;
   color: black
