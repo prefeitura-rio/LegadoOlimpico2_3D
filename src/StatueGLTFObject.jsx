@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import "./App.css";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Mesh } from "three";
 
 const styleLeft = {
   position: 'relative',
@@ -100,13 +101,27 @@ function StatueGLTFObject(props) {
   const { position, scale, modelUrl } = props;
 
   const gltf = useGLTF(modelUrl);
+  const scene = gltf.scene.clone();
+
+
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (child instanceof Mesh) {
+        if (modelUrl !== 'base_final.glb') {
+          child.castShadow = true; // Enable casting shadows
+        }
+        child.receiveShadow = true; // Enable receiving shadows
+      }
+       
+    });
+  }, [scene]);
 
   return (
-    <primitive
+    <primitive 
       ref={modelRef}
       position={position ? position : [0, 0, 0]}
       scale={scale ? scale : [1, 1, 1]}
-      object={gltf.scene}
+      object={scene}
     >
       {/* Each of these markers maps an HTML element onto a point in 3D space */}
       <ButtonMarker position={[5.35, 0.02, -4.8]}id={1}  visibleRange={[0.09, 0.14]} message="hakuna matata 1">Texto explicativo 1</ButtonMarker>

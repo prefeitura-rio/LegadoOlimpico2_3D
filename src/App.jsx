@@ -27,90 +27,7 @@ function Loader() {
   </Html>;
 }
 
-function Cover() {
-  const [isCapa, setIsCapa] = useState(true);
-  const [showButton, setShowButton] = useState(false);
-  const [zindex, setZindex] = useState(1);
 
-  const handleButtonClick = () => {
-    setIsCapa(false);
-    setZindex(-1)
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 2000); // 2000ms = 2s
-
-    return () => clearTimeout(timer); // Limpa o temporizador se o componente for desmontado
-  }, []);
-
-  return (
-    <div
-      style={{
-        background: "white",
-        position: "fixed",
-        zIndex: zindex,
-        top: "0",
-        right: "0",
-        bottom: "0",
-        left: "0",
-        transition: "opacity 1s ease-in-out",
-        opacity: isCapa ? 1 : 0,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <img src="logo.png" alt="Logo" style={{ width: "200px", position: "fixed", top: 20, left: "50%", transform: "translateX(-50%)" }} />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <div style={{ textAlign: "center", lineHeight: "1rem" }}>
-        <h1 style={{ fontSize: "5rem" }}>Legado Olímpico</h1>
-        <h2>Texto introdutório</h2>
-      </div>
-      <br></br>
-      <br></br>
-      <br></br>
-
-      {!showButton && <div className="loader"></div>}
-      {showButton && <button
-        onClick={handleButtonClick}
-        style={{
-          backgroundColor: "white", 
-          color: "black",
-          padding: "15px 50px", 
-          textAlign: "center", 
-          textDecoration: "none", 
-          display: "inline-block", 
-          fontSize: "16px", 
-          margin: "4px 2px", 
-          cursor: "pointer",
-          borderRadius: "12px", 
-          border: "2px solid black" 
-        }}
-      >
-        Tour 3D
-      </button>}
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <h5>Produzido pelo Escritório de Dados da Prefeitura da Cidade do Rio de Janeiro</h5>
-    </div>
-  );
-}
 function App() {
 
   const sheet = getProject("Fly Through", { state: theatreState }).sheet(
@@ -120,16 +37,28 @@ function App() {
   return (
     <>
       {/* The cover goes here */}
-      <Cover />
+      {/* <Cover /> */}
       {/* 3D scene container */}
-      <Canvas gl={{ preserveDrawingBuffer: true }}>
+      <Canvas shadows gl={{ preserveDrawingBuffer: true }}>
         <ScrollControls pages={12} damping={0.5}>
           <SheetProvider sheet={sheet}>
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={null}>
               <Scene />
             </Suspense>
           </SheetProvider>
-         
+          {/* <Scroll html>
+            <div id="article_wrapper">
+              HTML slides are nested here and we use vh values to specify where they are
+              <SimpleSlide viewportPosition={50}>Oi from slide 1</SimpleSlide>
+              <SimpleSlide viewportPosition={150}>Oi from slide 2</SimpleSlide>
+              <SimpleSlide viewportPosition={280}>Oi from slide 3</SimpleSlide>
+              <SimpleSlide viewportPosition={420}>Oi from slide 4</SimpleSlide>
+              <SimpleSlide viewportPosition={550}>Oi from slide 5</SimpleSlide>
+              <SimpleSlide viewportPosition={700}>Oi from slide 6</SimpleSlide>
+              <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
+              <SimpleSlide viewportPosition={980}>Oi from slide 7</SimpleSlide>
+            </div>
+          </Scroll> */}
         </ScrollControls>
       </Canvas>
       {/* </div> */}

@@ -11,7 +11,7 @@ import {
   PerspectiveCamera,
   useCurrentSheet,
 } from "@theatre/r3f";
-
+import { SoftShadows } from "@react-three/drei"
 
 
 function Scene() {
@@ -31,7 +31,7 @@ function Scene() {
 
   return (
     <>
-        {/* apartment: 'lebombo_1k.hdr',
+      {/* apartment: 'lebombo_1k.hdr',
         city: 'potsdamer_platz_1k.hdr',
         dawn: 'kiara_1_dawn_1k.hdr',
         forest: 'forest_slope_1k.hdr',
@@ -47,8 +47,21 @@ function Scene() {
       <color attach="background" args={[bgColor]} />
 
       {/* <fog attach="fog" color={bgColor} near={-4} far={10} /> */}
+
+      {/* <pointLight shadow-bias={-0.01}  castShadow position={[6.1, 1.6, -5]} distance={3.5}  intensity={10}/>
+      <ambientLight intensity={0.5} /> */}
+
+<directionalLight
+ position={[10, 12, -10]}
+ intensity={1.5}
+ castShadow
+ shadow-mapSize-width={2048}
+ shadow-mapSize-height={2048}
+ shadow-bias={-0.00006} /// shadow-bias={++0.005}
+/>
+
       <ambientLight intensity={0.5} />
-      <directionalLight position={[0, 3, -2]} intensity={2.5} />
+
 
 
       {/* Objects 📦 */}
@@ -88,6 +101,10 @@ function Scene() {
         <StatueGLTFObject modelUrl={"parque_olimpico.glb"} />
       </Suspense>
 
+      {/* <Suspense fallback={null}>
+        <StatueGLTFObject modelUrl={"or.glb"} scale={[0.1, 0.1, 0.1]} position={[5.4, 0.02, -4.1]} />
+      </Suspense> */}
+      {/* <SoftShadows /> */}
       <PerspectiveCamera
         theatreKey="Camera"
         makeDefault
